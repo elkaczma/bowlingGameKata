@@ -50,7 +50,7 @@ public class BowlingGameTest {
 	@Test
 	public void rollingStrikeThenThreeThenSixShouldScoreTwentyEight() {
 		Game game = new Game();
-		game.roll(10);		
+		game.rollStrike();		
 		game.roll(3);
 		game.roll(6);
 		assertThat(game.score(), is(28));
