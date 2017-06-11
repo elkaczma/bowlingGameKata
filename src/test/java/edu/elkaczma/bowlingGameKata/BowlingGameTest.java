@@ -30,8 +30,7 @@ public class BowlingGameTest {
 	@Test 
 	public void rollingSpareThenTwoShouldScoreFourteen() {
 		Game game = new Game();
-		game.roll(4);
-		game.roll(6);
+		game.rollSpare();
 		game.roll(2);
 		assertThat(game.score(), is(14));
 	}
@@ -41,8 +40,7 @@ public class BowlingGameTest {
 		Game game = new Game();
 		game.roll(1);
 		game.roll(2);
-		game.roll(4);
-		game.roll(6);
+		game.rollSpare();
 		game.roll(2);
 		assertThat(game.score(), is(17));
 	}
