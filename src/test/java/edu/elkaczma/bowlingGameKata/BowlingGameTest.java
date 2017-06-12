@@ -11,5 +11,12 @@ public class BowlingGameTest {
 	public void itCompiles() {
 		assertThat(true, equalTo(true));
 	}
+	
+	@Test
+	public void rollingOneScoresOne() {
+		Game game = new Game();
+		game.roll(1);
+		assertThat(game.score(), is(1));
+	}
 
 }
