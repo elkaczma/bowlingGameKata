@@ -19,4 +19,11 @@ public class BowlingGameTest {
 		assertThat(game.score(), is(1));
 	}
 
+	@Test
+	public void rollingOneThenTwoScoresThree() {
+		Game game = new Game();
+		game.roll(1);
+		game.roll(2);
+		assertThat(game.score(), is(3));
+	}
 }
