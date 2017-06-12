@@ -14,16 +14,26 @@ public class Game {
 		int rollIndex = 0;
 		for (int frame = 0; frame < 10; frame++, rollIndex += 2) {
 			if (isStrike(rollIndex)) {
-				score += rolls[rollIndex] + rolls[rollIndex+1] + rolls[rollIndex+2];
+				addPoints(rollIndex);
+				addBonus(rollIndex);
 				rollIndex--;
 			} else if (isSpare(rollIndex)) {
-				score += rolls[rollIndex] + rolls[rollIndex+1] + rolls[rollIndex+2];
+				addPoints(rollIndex);
+				addBonus(rollIndex);
 			} else {
-				score += rolls[rollIndex] + rolls[rollIndex+1];
+				addPoints(rollIndex);
 			}
 		}
 		
 		return score;
+	}
+
+	private void addBonus(int rollIndex) {
+		score += rolls[rollIndex+2];
+	}
+
+	private void addPoints(int rollIndex) {
+		score += rolls[rollIndex] + rolls[rollIndex+1];
 	}
 
 	private boolean isStrike(int rollIndex) {
