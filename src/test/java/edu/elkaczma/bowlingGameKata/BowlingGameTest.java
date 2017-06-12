@@ -44,4 +44,13 @@ public class BowlingGameTest {
 		game.roll(2);
 		assertThat(game.score(), is(17));
 	}
+	
+	@Test
+	public void rollingStrikeThenThreeThenSixScoresTwentyEight() {
+		Game game = new Game();
+		game.rollStrike();
+		game.roll(3);
+		game.roll(6);
+		assertThat(game.score(), is(28));
+	}
 }
